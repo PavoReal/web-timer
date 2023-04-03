@@ -1,7 +1,6 @@
-const timerInput = document.getElementById('timerInput');
 const startBtn = document.getElementById('startBtn');
 const timerDisplay = document.getElementById('timerDisplay');
-const resetBtn = document.createElement('button');
+const resetBtn = document.getElementById('resetBtn');
 let timer;
 
 function formatTime(milliseconds) {
@@ -44,11 +43,8 @@ startBtn.addEventListener('click', () => {
     }, 1000);
 });
 
-resetBtn.textContent = 'Reset';
 resetBtn.addEventListener('click', () => {
     clearInterval(timer);
     document.body.style.backgroundColor = "";
     updateTimerDisplay(0);
 });
-
-document.querySelector('.container').appendChild(resetBtn);
