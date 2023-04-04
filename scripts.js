@@ -41,7 +41,7 @@ startBtn.addEventListener('click', () => {
                 time -= 1000;
                 updateTimerDisplay(time);
                 if (time % (60 * 1000) === 0) {
-                    flashBackgroundColor(1000);
+                    flashBackgroundColor(2000);
                 }
             }
         }
