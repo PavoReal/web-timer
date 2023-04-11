@@ -2,6 +2,7 @@ const startBtn = document.getElementById('startBtn');
 const pauseBtn = document.getElementById('pauseBtn');
 const timerDisplay = document.getElementById('timerDisplay');
 const resetBtn = document.getElementById('resetBtn');
+const flashColor = document.getElementById('flashColor');
 let timer;
 let isPaused = false;
 
@@ -18,7 +19,7 @@ function updateTimerDisplay(time) {
 }
 
 function flashBackgroundColor(duration) {
-    document.body.style.backgroundColor = "green";
+    document.body.style.backgroundColor = flashColor.value;
     setTimeout(() => {
         document.body.style.backgroundColor = "";
     }, duration);
@@ -41,7 +42,7 @@ startBtn.addEventListener('click', () => {
                 time -= 1000;
                 updateTimerDisplay(time);
                 if (time % (60 * 1000) === 0) {
-                    flashBackgroundColor(2000);
+                    flashBackgroundColor(1000);
                 }
             }
         }
