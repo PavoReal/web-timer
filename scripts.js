@@ -3,6 +3,7 @@ const pauseBtn = document.getElementById('pauseBtn');
 const timerDisplay = document.getElementById('timerDisplay');
 const resetBtn = document.getElementById('resetBtn');
 const flashColor = document.getElementById('flashColor');
+const container = document.querySelector('.container');
 let timer;
 let isPaused = false;
 
@@ -20,8 +21,10 @@ function updateTimerDisplay(time) {
 
 function flashBackgroundColor(duration) {
     document.body.style.backgroundColor = flashColor.value;
+    container.style.backgroundColor = flashColor.value;
     setTimeout(() => {
         document.body.style.backgroundColor = "";
+        container.style.backgroundColor = "";
     }, duration);
 }
 
